@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MainApplication.SettingsPage"
+             Title="Settings">
+    <VerticalStackLayout VerticalOptions="Start">
+        <Label Text="Settings" VerticalOptions="Center" HorizontalOptions="Center" />
+
+        <!--Use TableView to emulate a Settings Page-->
+        <TableView Intent="Settings" VerticalOptions="Start" HorizontalOptions="Center">
+            <TableRoot>
+                <!--Representing the Row?-->
+                <TableSection>
+                    <SwitchCell Text="Dark Mode" On="{Binding DarkModeSwitched}" />
+                </TableSection>
+                <TableSection>
+                    <SwitchCell Text="Receive Notifications" On="{Binding NotificationsSwitched}"/>
+                </TableSection>
+
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Language" VerticalOptions="Center" />
+                            <Picker x:Name="LanguagePicker"
+                                    SelectedItem="{Binding SelectedLanguage}"
+                                    Title="Select Language">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Tagalog</x:String>
+                                        <x:String>Chinese</x:String>
+                                        <x:String>English</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+    </VerticalStackLayout>
+</ContentPage>

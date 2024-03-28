@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MainApplication.PeoplePage"
+             x:Name="peoplePage"
+             Title="PeoplePage">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Start" HorizontalOptions="Center">
+
+            <Label Text="Welcome to the People Page!" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,0,0,20" />
+            
+            <!--CollectionView for People-->
+            <CollectionView x:Name="collectionviewPeople" SelectionMode="Single">
+                <!--<CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" SnapPointsAlignment="Center" ItemSpacing="2" />
+                </CollectionView.ItemsLayout>-->
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Content -->
+                            <Label Text="{Binding Id, StringFormat='ID: {0}'}" Margin="0,0,10,0" Grid.Row="0" Grid.Column="0" 
+                                   VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Text="{Binding Name, StringFormat='Name: {0}'}" Margin="0,0,10,0" Grid.Row="0" Grid.Column="1"
+                                   VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Text="{Binding Age, StringFormat='Age: {0}'}" Grid.Row="0" Grid.Column="2"
+                                   VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+                <CollectionView.EmptyView>
+                    <Label Text="No Objects"/>
+                </CollectionView.EmptyView>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

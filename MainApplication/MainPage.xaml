@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MainApplication.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="ID" Grid.Row="0" Grid.Column="0" 
+                       HorizontalTextAlignment="End" VerticalTextAlignment="Center" Margin="0,0,10,0" />
+                <Entry x:Name="entryId" Placeholder="Enter Id" Grid.Row="0" Grid.Column="1" 
+                       MinimumWidthRequest="350"/>
+
+                <Label Text="Name" Grid.Row="1" Grid.Column="0" 
+                       HorizontalTextAlignment="End" VerticalTextAlignment="Center" Margin="0,0,10,0"/>
+                <Entry x:Name="entryName" Placeholder="Enter Name" Grid.Row="1" Grid.Column="1"
+                       MinimumWidthRequest="350"/>
+
+                <Label Text="Age" Grid.Row="2" Grid.Column="0" 
+                       HorizontalTextAlignment="End" VerticalTextAlignment="Center" Margin="0,0,10,0"/>
+                <Entry x:Name="entryAge" Placeholder="Enter Age" Grid.Row="2" Grid.Column="1"
+                       MinimumWidthRequest="350"/>
+
+            </Grid>
+
+            <Button x:Name="btnEnter" Text="Enter" MaximumWidthRequest="100" Clicked="btnEnter_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
