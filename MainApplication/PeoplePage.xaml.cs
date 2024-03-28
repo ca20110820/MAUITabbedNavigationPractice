@@ -37,6 +37,10 @@ public partial class PeoplePage : ContentPage
         People = (List<PersonModel>)people;
 		collectionviewPeople.ItemsSource = null;
         collectionviewPeople.ItemsSource = People;
+
+        datagridPeople.ItemsSource = null;
+        datagridPeople.ItemsSource = people;
+
     }
     private void SetPeopleFromApp()
     {
